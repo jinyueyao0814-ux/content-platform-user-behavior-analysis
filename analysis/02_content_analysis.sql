@@ -1,10 +1,8 @@
--- ================================
--- 模块二：内容消费行为分析
--- ================================
+模块二：内容消费行为分析
 
 USE content_platform;
 
--- 各分类完播率与互动率
+- 各分类完播率与互动率
 SELECT
     v.category,
     ROUND(AVG(a.watch_sec / v.duration_sec), 2) AS avg_completion_rate,
