@@ -5,7 +5,7 @@ USE content_platform;
 各分类完播率与互动率
 SELECT
     v.category,
-    ROUND(AVG(a.watch_sec / v.duration_sec), 2) AS avg_completion_rate,
+    ROUND(AVG(a.watch_duration / v.duration), 2) AS avg_completion_rate,
     ROUND(SUM(CASE WHEN a.is_liked=1 OR a.is_commented=1 OR a.is_shared=1
                    THEN 1 ELSE 0 END) / COUNT(*), 2) AS interaction_rate
 FROM user_actions a
